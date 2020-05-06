@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="180dp"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              >
+    <LinearLayout android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                  android:orientation="vertical"
+    >
+        <TextView
+                android:id="@+id/depart_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="学院选择"
+                android:textSize="16dp"
+                android:textColor="@color/tab_text_color"
+                android:gravity="center"/>
+        <GridView
+                android:id="@+id/constellation"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scrollbars="none"
+                android:layout_margin="5dp"
+                android:horizontalSpacing="3dp"
+                android:verticalSpacing="2dp"
+                android:numColumns="4"/>
+        <TextView
+                android:id="@+id/lab_category_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="类别选择"
+                android:textSize="16dp"
+                android:textColor="@color/tab_text_color"
+                android:gravity="center"/>
+        <GridView
+                android:id="@+id/constellation2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scrollbars="none"
+                android:layout_margin="5dp"
+                android:horizontalSpacing="3dp"
+                android:verticalSpacing="2dp"
+                android:numColumns="4"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal">
+            <Button android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="确定"
+                    android:alpha="200"
+                    android:id="@+id/sure_btn"
+                    android:textSize="16sp"
+                    android:background="@color/white"
+                    android:textColor="@color/_0091ea"/>
+            <Button android:layout_width="0dp"
+                    android:layout_weight="1" android:layout_height="match_parent"
+                    android:text="取消"
+                    android:alpha="200"
+                    android:id="@+id/cancel_btn"
+                    android:textSize="16sp"
+                    android:background="@color/white"
+                    android:textColor="@color/_0091ea"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

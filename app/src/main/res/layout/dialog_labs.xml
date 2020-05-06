@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="300dp"
+              android:background="@color/white"
+              >
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:alpha="200"
+            android:layout_margin="5dp"
+            android:layout_marginBottom="10dp">
+        <TextView
+                android:id="@+id/dialog_title"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:text="实验室选择"
+                android:textSize="16dp"
+                android:textColor="@color/tab_text_color"
+                android:gravity="center"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="200dp" >
+        <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cacheColorHint="@color/no_color"
+                android:paddingLeft="4dp"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                android:dividerHeight="1px"
+                android:divider="#dcdcdc"
+                android:background="@color/white"
+                android:alpha="200" >
+        </ListView>
+
+        <ListView
+                android:id="@+id/listView2"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cacheColorHint="@color/no_color"
+                android:paddingRight="4dp"
+                android:layout_weight="1"
+                android:divider="@null"
+                android:background="@color/choose_eara_item_press_color"
+                android:alpha="200">
+        </ListView>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="取消"
+                android:alpha="200"
+                android:id="@+id/cancel_btn"
+                android:textSize="16sp"
+                android:background="@color/white"
+        android:textColor="@color/_0091ea"/>
+    </LinearLayout>
+</LinearLayout>

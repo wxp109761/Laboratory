@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/shallow_white">
+    <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="工号"
+                    style="@style/Custom.user_info" />
+            <TextView
+                    android:id="@+id/user_job_numeber"
+                    style="@style/Custom.user_info" />
+        </LinearLayout>
+        <View style="@style/Custom.lineStyle" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="姓名"
+                    style="@style/Custom.user_info" />
+            <TextView
+                    android:id="@+id/user_name"
+                    style="@style/Custom.user_info" />
+        </LinearLayout>
+        <View style="@style/Custom.lineStyle" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="联系方式"
+                    style="@style/Custom.user_info" />
+            <TextView
+                    android:id="@+id/user_tel"
+                    style="@style/Custom.user_info" />
+        </LinearLayout>
+        <View style="@style/Custom.lineStyle" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="学院"
+                    style="@style/Custom.user_info" />
+            <TextView
+                    android:id="@+id/user_depart"
+                    style="@style/Custom.user_info" />
+        </LinearLayout>
+
+        <View style="@style/Custom.lineStyle" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="注册日期"
+                    style="@style/Custom.user_info" />
+            <TextView
+                    android:id="@+id/user_gmt_create"
+                    style="@style/Custom.user_info" />
+        </LinearLayout>
+        <View style="@style/Custom.lineStyle" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="信息修改日期"
+                    style="@style/Custom.user_info" />
+            <TextView
+                    android:id="@+id/user_gmt_update"
+                    style="@style/Custom.user_info" />
+        </LinearLayout>
+        <View style="@style/Custom.lineStyle" />
+    </LinearLayout>
+</LinearLayout>

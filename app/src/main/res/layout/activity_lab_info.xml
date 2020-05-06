@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+
+            android:background="@android:color/white"
+            android:orientation="vertical">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="实验室编号："
+                    style="@style/Custom.user_info" />
+            <TextView
+                    android:id="@+id/lab_id"
+                    style="@style/Custom.add_labs"/>
+        </LinearLayout>
+        <View style="@style/Custom.lineStyle" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="实验室名称："
+                    style="@style/Custom.user_info" />
+            <TextView
+                    android:id="@+id/lab_label"
+                    style="@style/Custom.add_labs"/>
+        </LinearLayout>
+        <View style="@style/Custom.lineStyle" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="实验室功能："
+                    style="@style/Custom.user_info" />
+            <TextView
+                    android:id="@+id/lab_function"
+                    style="@style/Custom.add_labs"/>
+        </LinearLayout>
+        <View style="@style/Custom.lineStyle" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="实验室状态："
+                    style="@style/Custom.user_info" />
+            <TextView
+                    android:id="@+id/lab_state"
+                    style="@style/Custom.add_labs"/>
+        </LinearLayout>
+        <View style="@style/Custom.lineStyle" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="实验室类别："
+                    style="@style/Custom.user_info" />
+            <TextView
+                    android:id="@+id/lab_category"
+                    style="@style/Custom.add_labs"/>
+        </LinearLayout>
+        <View style="@style/Custom.lineStyle" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="实验室安全状态："
+                    style="@style/Custom.user_info" />
+            <TextView
+                    android:id="@+id/lab_safe_status"
+                    style="@style/Custom.add_labs"/>
+        </LinearLayout>
+        <View style="@style/Custom.lineStyle" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="实验室创建日期："
+                    style="@style/Custom.user_info" />
+            <TextView
+                    android:id="@+id/lab_create_date"
+                    style="@style/Custom.add_labs"/>
+        </LinearLayout>
+        <View style="@style/Custom.lineStyle" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="实验室更新日期："
+                    style="@style/Custom.user_info" />
+            <TextView
+                    android:id="@+id/lab_update_date"
+                    style="@style/Custom.add_labs"/>
+        </LinearLayout>
+        <View style="@style/Custom.lineStyle" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:id="@+id/click_expand"
+                    android:text="待检测的项目"
+                    style="@style/Custom.user_info"
+            />
+        </LinearLayout>
+        <ListView android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:id="@+id/list_view"/>
+    </LinearLayout>
+
+</LinearLayout>

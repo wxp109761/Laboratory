@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Laboratory</string>
+    <string name="home">首页</string>
+    <string name="system">发现</string>
+    <string name="msg">消息</string>
+
+
+    <string name="xj_records">巡检记录</string>
+    <string name="mine_labs">我的实验室</string>
+    <string name="user_info">个人信息</string>
+
+    <string name="lab_info">实验室详情</string>
+    <string name="xj_result">巡检结果</string>
+
+    <string name="lab_items">巡检项目</string>
+
+    <string name="login_success">登录成功!</string>
+    <string name="register_success">注册成功!</string>
+    <string name="username_not_empty">用户名不能为空</string>
+    <string name="password_not_empty">"密码不能为空</string>
+    <string name="isLoging">登录中&#8230;</string>
+    <string name="isRegistering">注册中&#8230;</string>
+    <string name="login">登&#160;&#160;录</string>
+    <string name="register">注&#160;&#160;册</string>
+
+    <string name="navigation_drawer_open">打开</string>
+    <string name="navigation_drawer_close">关闭</string>
+
+
+    <string name="exit">退出登录</string>
+    <string name="search">搜索</string>
+
+    <string name="isSubmitting">提交中&#8230;</string>
+    <string name="submit_success">提交成功!</string>
+
+
+    <string name="tip_no_data">没有数据哦</string>
+    <string name="tip_load_data">数据加载中&#8230;</string>
+    <string name="tip_load_error">加载出错</string>
+    <string name="connect_error">网络异常</string>
+    <string name="unknown_host">无法连接到主机</string>
+    <string name="connect_timeout">连接超时</string>
+    <string name="request_timeout">请求超时</string>
+    <string name="parse_error">解析错误</string>
+    <string name="unknown_error">未知错误</string>
+    <string name="illegal_params">非法参数</string>
+
+    <string name="menu_settings">Settings</string>
+    <string name="no_data">没有找到符合条件的房源</string>
+
+
+    <string-array name="departNames">
+        <item>深蓝学院</item>
+        <item>化工学院</item>
+        <item>环境学院</item>
+        <item>生物学院</item>
+        <item>人文社科学院</item>
+        <item>数理学院</item>
+        <item>计算机学院</item>
+    </string-array>
+    <string-array name="labCates">
+        <item>开放机房</item>
+        <item>研究生实验室</item>
+        <item>博士生实验室</item>
+        <item>导师工作室</item>
+        <item>个人办公室</item>
+    </string-array>
+
+
+
+</resources>

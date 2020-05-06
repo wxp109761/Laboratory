@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+
+            android:background="@android:color/white"
+            android:orientation="vertical">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="项目名称："
+                    style="@style/Custom.user_info" />
+            <EditText
+                    android:id="@+id/item_name"
+                    style="@style/Custom.user_info"/>
+        </LinearLayout>
+        <View style="@style/Custom.lineStyle" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                    android:text="所属： "
+                    style="@style/Custom.user_info" />
+
+            <TextView style="@style/Custom.user_info"
+                      android:id="@+id/tv_depart"/>
+            <Spinner
+                    android:id="@+id/depart_spinner" style="@style/Custom.add_labs"
+                    android:visibility="gone"/>
+        </LinearLayout>
+        <View style="@style/Custom.lineStyle" />
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="新增待检测条目"
+                android:id="@+id/add_labs"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

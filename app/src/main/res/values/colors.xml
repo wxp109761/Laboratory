@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/_0091ea</color>
+    <color name="colorPrimaryDark">@color/_0091ea</color>
+    <color name="colorAccent">#ff4081</color>
+
+    <color name="app_bg">#eee</color>
+    <color name="login_bg">@color/background</color>
+    <color name="shallow_white">#80ffffff</color>
+    <color name="black">#000000</color>
+    <color name="red">#FF0000</color>
+    <color name="translucent">#00000000</color>
+    <color name="toolbar_bg">#2a3575</color>
+    <color name="_0091ea">#0091ea</color>
+    <color name="_009a61">#009a61</color>
+    <color name="_a5a9aa">#a5a9aa</color>
+    <color name="_2e3135">#2e3135</color>
+    <color name="_333333">#333333</color>
+    <color name="_767676">#767676</color>
+    <color name="_60ffffff">#60ffffff</color>
+    <color name="_20000000">#20000000</color>
+    <color name="_10000000">#10000000</color>
+    <color name="_484848">#484848</color>
+    <color name="_999999">#999999</color>
+    <color name="text_second">#67676a</color>
+    <color name="white">#ffffff</color>
+
+    <color name="drop_down_selected">#7B1FA2</color>
+    <color name="drop_down_unselected">#111111</color>
+
+    <color name="mask_color">#88888888</color>
+    <color name="check_bg">#f2f2f2</color>
+    <color name="un_press_color">#9C27B0</color>
+
+    <color name="popup_main_background">#b0000000</color>
+
+    <color name="choose_eara_item_press_color">#f4f4f4</color>
+
+    <color name="no_color">#00000000</color>
+
+
+    <color name="basic_ui_action_bar_bg">#4282f4</color>
+    <color name="basic_ui_action_bar_icon">@color/text_invert</color>
+    <color name="basic_ui_action_bar_text">@color/text_invert</color>
+    <color name="basic_ui_action_bar_text_alpha">@color/text_invert_alpha</color>
+    <color name="basic_ui_action_bar_bottom_line">@color/line</color>
+    <!--loading dialog背景颜色-->
+    <color name="basic_ui_dialog_loading_rectangle">@color/transparent</color>
+    <!--loading dialog圆圈颜色-->
+    <color name="basic_ui_dialog_loading_circle">#4282f4</color>
+
+    <color name="text_invert">#111111</color>
+    <color name="text_invert_alpha">#88111111</color>
+    <color name="main_alpha">#994282f4</color>
+    <color name="assist">#3cdc86</color>
+    <color name="accent">#f86734</color>
+    <color name="transparent">#00000000</color>
+    <color name="line">#f5f5f5</color>
+    <color name="background">#f5f5f5</color>
+    <color name="background_alpha">#ccf5f5f5</color>
+    <color name="background_mask">#11000000</color>
+    <color name="foreground">#ffffff</color>
+    <color name="foreground_alpha">#ccffffff</color>
+    <color name="foreground_mask">#ccffffff</color>
+    <color name="foreground_top">#f5f5f5</color>
+    <color name="surface">#ffffff</color>
+    <color name="surface_alpha">#ccffffff</color>
+    <color name="surface_mask">#ccffffff</color>
+    <color name="surface_top">#f5f5f5</color>
+    <color name="surface_top_alpha">#ccf5f5f5</color>
+    <color name="surface_top_mask">#11000000</color>
+    <color name="invert">#333333</color>
+    <color name="invert_alpha">#11000000</color>
+    <color name="second">#666666</color>
+    <color name="third">#999999</color>
+    <color name="fourth">#cccccc</color>
+    <!--文字颜色-->
+
+
+    <color name="textColorPrimary">#FFFFFF</color>
+
+    <color name="windowBackground">#FFFFFF</color>
+
+    <color name="navigationBarColor">#000000</color>
+
+    <color name="black_semi_transparent">#B2000000</color>
+
+    <color name="black_semi">#3B3B3B</color>
+
+
+    <color name="half_black">#808080</color>
+
+    <color name="half_black_2">#8a8a8a</color>
+
+    <color name="white_pressed">#f1f1f1</color>
+
+    <color name="pink">#e91e63</color>
+
+    <color name="pink_pressed">#ec407a</color>
+
+    <color name="blue_semi_transparent">#805677fc</color>
+
+    <color name="blue_semi_transparent_pressed">#80738ffe</color>
+
+    <color name="yellow">#f6d126</color>
+
+    <color name="grey">#14d0d0d0</color>
+
+    <color name="green">#68e504</color>
+
+    <color name="deadline_red">#ef0606</color>
+
+    <color name="deadline_blue">#024265</color>
+
+    <color name="deadline_orange">#ea9d16</color>
+
+    <!-- dots inactive colors -->
+
+
+    <color name="dot_dark_screen">#026499</color>
+
+    <!-- dots active colors -->
+
+
+    <color name="dot_light_screen">#448bb2</color>
+
+    <color name="titleTextColor">#000000</color>
+
+    <color name="shadowColor">#FFFFFF</color>
+
+
+    -<array name="array_dot_active">
+
+    <item>@color/dot_light_screen</item>
+
+    <item>@color/dot_light_screen</item>
+
+    <item>@color/dot_light_screen</item>
+
+    <item>@color/dot_light_screen</item>
+
+    <item>@color/dot_light_screen</item>
+
+</array>
+
+
+    -<array name="array_dot_inactive">
+
+    <item>@color/dot_dark_screen</item>
+
+    <item>@color/dot_dark_screen</item>
+
+    <item>@color/dot_dark_screen</item>
+
+    <item>@color/dot_dark_screen</item>
+
+    <item>@color/dot_dark_screen</item>
+
+</array>
+
+    <color name="text1">#4D4D4D</color>
+
+    <color name="text2">#999999</color>
+
+    <color name="icon_color">#4a8fff</color>
+
+    <color name="rice">#FFFFF0</color>
+
+    <color name="colorTextDark">#333333</color>
+
+    <!-- 水纹 -->
+
+
+    <color name="colorRipple">#F4A5A0</color>
+
+    <!-- 倒计时钟 -->
+
+
+    <color name="colorStrokeCircle">#55ffffff</color>
+
+    <color name="colorStrokeArc">#ffffff</color>
+
+    <!-- 分割线 -->
+
+
+    <color name="colorDivider">#E9E9E9</color>
+
+    <!-- Toast color-->
+
+
+    <color name="toastSuccess">#57BDAA</color>
+
+    <color name="toastError">#FD5B78</color>
+
+    <color name="toastInfo">#7bbfea</color>
+
+    <color name="toastNormal">#828281</color>
+
+
+</resources>

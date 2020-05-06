@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical">
+    <ListView
+            android:id="@+id/action_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+    ></ListView>
+    <com.example.laboratory.utils.DropDownMenu
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/DropMenu"
+            app:dddividerColor="@color/_0091ea"
+            app:ddmaskColor="@color/mask_color"
+            app:ddmenuBackgroundColor="@color/shallow_white"
+            app:ddmenuSelectedIcon="@drawable/ic_arrow_right"
+            app:ddmenuTextSize="40dp"
+            app:ddtextSelectedColor="@color/_0091ea"
+            app:ddtextUnselectedColor="@color/drop_down_unselected"
+            app:ddunderlineColor="@color/_0091ea">
+    </com.example.laboratory.utils.DropDownMenu>
+
+
+</LinearLayout>

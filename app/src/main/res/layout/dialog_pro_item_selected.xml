@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="380dp"
+              android:background="@color/white"
+              >
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="8"
+                android:text="待检测问题选择"
+                android:textSize="15dp"
+                android:textColor="@color/colorPrimary"
+                android:gravity="center"/>
+    </LinearLayout>
+    <ListView
+            android:id="@+id/checkbox_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+    </ListView>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
+                  android:orientation="horizontal">
+        <EditText
+                android:id="@+id/add_item_name"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_height="35dp"
+                android:background="@color/shallow_white"
+               android:layout_gravity="center"
+               android:hint="item_name"/>
+
+        <LinearLayout  android:layout_width="0dp"
+                       android:layout_weight="3"
+                       android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginRight="20dp"
+                       android:orientation="horizontal"
+        >
+            <CheckBox
+                    android:id="@+id/is_common"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                      android:background="@color/shallow_white"
+                      android:text="公共项目"
+            />
+        </LinearLayout>
+
+
+        <Button
+                android:id="@+id/add_item_btn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="35dp"
+                android:background="@color/_a5a9aa"
+                android:layout_gravity="center"
+                android:layout_marginRight="30dp"
+                android:text="新增"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="60dp"
+                  android:orientation="horizontal"
+
+    >
+        <Button
+                android:id="@+id/cancel_btn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="35dp"
+                android:background="@color/shallow_white"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:text="取消"/>
+        <Button
+                android:id="@+id/sure_btn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="35dp"
+                android:background="@color/colorPrimary"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:text="确定"/>
+    </LinearLayout>
+
+</LinearLayout>
