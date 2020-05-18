@@ -7,6 +7,7 @@ import com.example.laboratory.bean.User;
 import com.example.laboratory.bean.UserList;
 import com.example.laboratory.net.callback.RxObserver;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -27,6 +28,7 @@ public interface IUserModel {
 
 
     void getUserExceptSelf(RxObserver<UserList> rxObserver,String uid);
+    void updateUserInfo(RxObserver<String> rxObserver,String uid,User user);
 
 
 }

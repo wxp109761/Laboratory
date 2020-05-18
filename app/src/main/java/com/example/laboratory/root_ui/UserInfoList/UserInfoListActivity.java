@@ -107,7 +107,6 @@ public class UserInfoListActivity extends BaseAbListActivity<UserInfoListPresent
         Intent intent = new Intent(this, UserInfoActivity.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable(Const.BUNDLE_KEY.OBJ, bean);
-        bundle.putString("cate","1");
         intent.putExtras(bundle);
         startActivity(intent);
     }

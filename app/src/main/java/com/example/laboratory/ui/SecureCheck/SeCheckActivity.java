@@ -38,34 +38,32 @@ public class SeCheckActivity extends BaseAbListActivity<SeCheckPresenter,Items.I
 
         Button commitBtn=new Button(this);
         commitBtn.setText("提交");
-
         FrameLayout.LayoutParams lp = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.FILL_PARENT,
                 FrameLayout.LayoutParams.WRAP_CONTENT);
         lp.gravity=Gravity.BOTTOM;
         addContentView(commitBtn,lp);//这个是重点
         commitBtn.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View arg0) {
                 xjid= UUID.randomUUID()+"";
-               Xjrecord xjrecord=new Xjrecord();
-               xjrecord.setXjid(xjid);
-               xjrecord.setLabid(labId);
-               xjrecord.setXjrUid(UserInfoManager.getUserInfo().getUid());
+                Xjrecord xjrecord=new Xjrecord();
+                xjrecord.setXjid(xjid);
+                xjrecord.setLabid(labId);
+                xjrecord.setXjrUid(UserInfoManager.getUserInfo().getUid());
 //                for (int i = 0; i <results.size() ; i++) {
 //                    if(results.)
 //                }
                xjrecord.setState("1");
                mPresenter.addRecord(xjrecord);
-                results=CheckItemListAdapter.getResut();
-                for (int i = 0; i <results.size() ; i++) {
-                    results.get(i).setXjid(xjrecord.getXjid());
-                }
-                mPresenter.addResultList(results);
+               results=CheckItemListAdapter.getResut();
+               for (int i = 0; i <results.size() ; i++) {
+                   results.get(i).setXjid(xjrecord.getXjid());
+               }
+               mPresenter.addResultList(results);
             }
         });
         btn_scroll_top.setVisibility(View.GONE);
-            return new SeCheckPresenter();
+        return new SeCheckPresenter();
 
     }
 

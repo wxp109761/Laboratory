@@ -41,37 +41,17 @@ public class UserInfoActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
-
         Bundle bundle = this.getIntent().getExtras();
-        String cateKey= bundle.getString("cate");
-
         ButterKnife.bind(this);
-
-        if(cateKey.equals("1")){
-            UserList.UserListBean user = (UserList.UserListBean) bundle.getSerializable(Const.BUNDLE_KEY.OBJ);
-            if (user!=null) {
-                userJobNumeber.setText(user.getJobNumber());
-                userName.setText(user.getUsername());
-                userTel.setText(user.getTel());
-                userDepart.setText(commonUtils.getDepartName(user.getDepartId()));
-                userGmtCreate.setText(DateUtils.parseTime(user.getGmtCreate()));
-                userGmtUpdate.setText(DateUtils.parseTime(user.getGmtUpdate()));
-            }
-        }else if(cateKey.equals("2")){
-            User user=new User();
-            user= UserInfoManager.getUserInfo();
-            if (user!=null) {
-                userJobNumeber.setText(user.getJobNumber());
-                userName.setText(user.getUsername());
-                userTel.setText(user.getTel());
-                userDepart.setText(commonUtils.getDepartName(user.getDepartId()));
-                userGmtCreate.setText(DateUtils.parseTime(user.getGmt_create()));
-                userGmtUpdate.setText(DateUtils.parseTime(user.getGmt_update()));
-            }
+        UserList.UserListBean user = (UserList.UserListBean) bundle.getSerializable(Const.BUNDLE_KEY.OBJ);
+        if (user!=null) {
+            userJobNumeber.setText(user.getJobNumber());
+            userName.setText(user.getUsername());
+            userTel.setText(user.getTel());
+            userDepart.setText(commonUtils.getDepartName(user.getDepartId()));
+            userGmtCreate.setText(DateUtils.parseTime(user.getGmtCreate()));
+            userGmtUpdate.setText(DateUtils.parseTime(user.getGmtUpdate()));
         }
-
-
-
 
     }
 

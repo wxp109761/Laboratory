@@ -3,7 +3,8 @@ package com.example.laboratory.net;
 import android.content.Context;
 
 import com.example.laboratory.R;
-import com.example.laboratory.utils.NetworkUtils;
+
+import com.example.laboratory.utils.NetWorkUtils;
 import com.example.laboratory.utils.ToastUtils;
 
 import org.json.JSONException;
@@ -26,7 +27,7 @@ public class NetExceptionHandle {
      * @param t
      */
     public static void dealException(Context context, Throwable t) {
-        if (!NetworkUtils.isAvailable(context)){
+        if (!NetWorkUtils.isNetworkConnected(context)){
             onException(NetConfig.CONNECT_ERROR, context);
             return;
         }

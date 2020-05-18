@@ -8,11 +8,6 @@ import com.example.laboratory.ui.core.presenter.BasePresenter;
 import java.util.List;
 
 
-/**
- * 和用户相关的Presenter
- * author: 康栋普
- * date: 2018/3/21
- */
 
 public class ResultPresenter extends BasePresenter<ResultContract.IResultView> implements ResultContract.IResultPresenter {
     private ResultContract.IResultView mResultView;

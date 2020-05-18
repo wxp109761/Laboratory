@@ -43,7 +43,6 @@ public class uploadPicUtil{
 
         UploadManager uploadManager = new UploadManager(config); // UploadManager对象只需要创建一次重复使用
 
-
         /**
          * 生成token
          * create()方法的两个参数分别是 AK SK
@@ -86,7 +85,7 @@ public class uploadPicUtil{
                                 }
                                 else
                                 {
-                                    Log.i("上传结果：", "Upload Fail");
+                                    Log.i("上传结果：", "Upload Fail"+info);
                                     //如果失败，这里可以把info信息上报自己的服务器，便于后面分析上传错误原因
                                 }
                                 Log.i("key：", key + "\ninfo：" + info + "\nres：" + res);
@@ -94,7 +93,7 @@ public class uploadPicUtil{
                         },
                         null
                 );
-        return domin+key+".jpg";
+        return domin+key;
     }
 
 }

@@ -65,7 +65,6 @@ public class LabListActivity extends BaseAbListActivity<LabPresenter, Laboratory
                         labListBeans.add(mListData.get(i));
                     }
                 }
-                System.out.println("zzz"+departSelect+"  "+cateSelect);
             }
         }else {
            departid=CommonUtils.getDepartId(departSelect);
@@ -75,14 +74,13 @@ public class LabListActivity extends BaseAbListActivity<LabPresenter, Laboratory
                         labListBeans.add(mListData.get(i));
                     }
                 }
-                System.out.println("qqq"+departid+"  "+cateSelect);
             }else {
                 for (int i = 0; i <mListData.size() ; i++) {
                     if(mListData.get(i).getDepartId().equals(departid)&&mListData.get(i).getCategory().equals(cateSelect)){
                         labListBeans.add(mListData.get(i));
                     }
                 }
-                System.out.println("aaa"+departid+"  "+cateSelect);
+
             }
         }
 

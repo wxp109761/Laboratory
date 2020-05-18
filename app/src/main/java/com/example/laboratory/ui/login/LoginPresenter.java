@@ -10,17 +10,13 @@ import com.example.laboratory.inter.VerifyAccountCallback;
 import com.example.laboratory.net.callback.RxObserver;
 import com.example.laboratory.ui.core.model.impl.LoginModel;
 import com.example.laboratory.ui.core.presenter.BasePresenter;
+import com.example.laboratory.ui.core.view.IView;
 
 import java.util.List;
 
-/**
- * 登录、注册Presenter
- * Created by 康栋普 on 2018/2/1.
- */
+
 
 public class LoginPresenter extends BasePresenter<LoginContract.ILoginRegisterView> implements LoginContract.IUserPresenter {
-
-    private String jobNumber, password;
     private LoginModel loginModel;
     private LoginContract.ILoginRegisterView mLoginView;
 
@@ -32,23 +28,20 @@ public class LoginPresenter extends BasePresenter<LoginContract.ILoginRegisterVi
      * 登录
      */
     @Override
-    public void login() {
-        if (!verifyAccount()) return;
+    public void login(String jobNumber,String password) {
+//        if (!verifyAccount()) return;
+        IView iView=getView();
         RxObserver<User> mLoginRxObserver = new RxObserver<User>(this) {
-            @Override
-            protected void onStart() {
-                mLoginView.showLoading(AppContext.getContext().getString(R.string.isLoging));
-            }
             @Override
             protected void onSuccess(User userBean) {
                 userBean.setPassword(password);
                 loginModel.saveUserInfo(userBean);
-                mLoginView.showResult(AppContext.getContext().getString(R.string.login_success));
+                iView.showResult("登录成功!");
             }
 
             @Override
             protected void onFail(int errorCode, String errorMsg) {
-                mLoginView.showFail(errorMsg);
+                iView.showFail(errorMsg);
             }
         };
         loginModel.login(jobNumber,password, mLoginRxObserver);
@@ -61,7 +54,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.ILoginRegisterVi
      */
     @Override
     public void register() {
-        if (!verifyAccount()) return;
+//        if (!verifyAccount()) return;
         RxObserver<String> mRegisterRxObserver = new RxObserver<String>(this) {
             @Override
             protected void onStart() {
@@ -78,7 +71,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.ILoginRegisterVi
                 mLoginView.showFail(errorMsg);
             }
         };
-        loginModel.register(jobNumber, password, mRegisterRxObserver);
+       // loginModel.register(jobNumber, password, mRegisterRxObserver);
         addDisposable(mRegisterRxObserver);
     }
 
@@ -93,14 +86,6 @@ public class LoginPresenter extends BasePresenter<LoginContract.ILoginRegisterVi
         }
     };
 
-    /**
-     * 帐号验证
-     */
-    private boolean verifyAccount() {
-        mLoginView = getView();
-        jobNumber = mLoginView.getJobNumber();
-        password = mLoginView.getPassWord();
-        return loginModel.verifyAccount(jobNumber, password, mVerifyAccountCallback);
-    }
+
 
 }

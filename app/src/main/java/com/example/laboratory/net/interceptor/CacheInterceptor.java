@@ -1,11 +1,10 @@
 package com.example.laboratory.net.interceptor;
 
 import com.example.laboratory.application.AppContext;
-import com.example.laboratory.utils.NetworkUtils;
-
 
 import java.io.IOException;
 
+import com.example.laboratory.utils.NetWorkUtils;
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;
 import okhttp3.Request;
@@ -21,7 +20,7 @@ public class CacheInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
-        if (NetworkUtils.isAvailable(AppContext.getContext())) {
+        if (NetWorkUtils.isNetworkConnected(AppContext.getContext())) {
             //有网络时只从网络获取
             request = request.newBuilder()
                     .cacheControl(CacheControl.FORCE_NETWORK)
@@ -29,7 +28,7 @@ public class CacheInterceptor implements Interceptor {
         }
         Response response = chain.proceed(request);
         //设置有网不缓存
-        if (NetworkUtils.isAvailable(AppContext.getContext())) {
+        if (NetWorkUtils.isNetworkConnected(AppContext.getContext())) {
             //有网络时，设置缓存超时为0
             int maxAge = 0;
             response = response.newBuilder()

@@ -1,9 +1,11 @@
 package com.example.laboratory.root_ui.UserInfoList;
 
+import com.example.laboratory.bean.User;
 import com.example.laboratory.bean.UserList;
 import com.example.laboratory.net.callback.RxObserver;
 import com.example.laboratory.ui.core.model.impl.UserModel;
 import com.example.laboratory.ui.core.presenter.BasePresenter;
+import com.example.laboratory.ui.core.view.IView;
 
 import java.util.List;
 
@@ -21,6 +23,24 @@ public class UserInfoListPresenter extends BasePresenter<UserInfoListContact.IUs
         userModel.getUserExceptSelf(userListRxObserver,uid);
         addDisposable(userListRxObserver);
     }
+
+    @Override
+    public void updateUserInfo(String uid, User user) {
+        IView iView = getView();
+        RxObserver<String> rxObserver=new RxObserver<String>(this) {
+            @Override
+            protected void onSuccess(String msg) {
+                iView.showResult(msg);
+            }
+            @Override
+            protected void onFail(int errorCode, String errorMsg) {
+                iView.showFail(errorMsg);
+            }
+        };
+        userModel.updateUserInfo(rxObserver,uid,user);
+        addDisposable(rxObserver);
+    }
+
 
     RxObserver<UserList> getUserRxo(){
         iUserInfoListView= getView();

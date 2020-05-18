@@ -15,15 +15,11 @@ public class HomeContract {
         void getDepartList();
         void getAllUsers();
         void getLabsData(String id,String cate);
-
         void getUserListPermissionNot(String permission);
        // void getUsersByDepart(String uid,String departId);
     }
     interface IHomeView extends IView{
-
         void getDepartList(List<Depart.DepartListBean> departListeans);
-
-
         void getUserList(List<UserList.UserListBean> userListBeans);
         void getLabList(List<LaboratoryList.LabListBean> labListBeans);
     }

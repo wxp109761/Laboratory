@@ -34,8 +34,6 @@ public class CommonModel extends BaseModel implements ICommonModel {
                 .compose(RxSchedulers.<UserList>io_main())
                 .subscribe(rxObserver);
     }
-
-
     @Override
     public void getLaboratoryList(int page, int size, String uid,String departId, RxObserver<Laboratory> rxObserver) {
         Gson gson=new Gson();

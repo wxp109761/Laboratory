@@ -8,11 +8,6 @@ import com.example.laboratory.application.AppContext;
 import com.example.laboratory.common.Const;
 
 
-/**
- * Glide图片加载管理类
- * author: 康栋普
- * date: 2018/2/26
- */
 
 public class ImageLoaderManager {
     private static RequestOptions nomal_image_options = RequestOptions

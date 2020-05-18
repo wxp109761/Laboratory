@@ -1,15 +1,20 @@
 package com.example.laboratory.ui;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.FileUtils;
 import android.os.Handler;
 import android.view.KeyEvent;
 import android.view.View;
 
+import android.view.WindowManager;
+import android.widget.EditText;
 import com.example.laboratory.R;
 import com.example.laboratory.bean.User;
 import com.example.laboratory.manager.UserInfoManager;
+import com.example.laboratory.ui.base.BaseActivity;
 import com.example.laboratory.ui.base.BasePresenterActivity;
 import com.example.laboratory.ui.login.LoginActivity;
 import com.example.laboratory.ui.login.LoginContract;
@@ -19,78 +24,17 @@ import com.example.laboratory.ui.main.MainActivity;
 import java.lang.ref.WeakReference;
 
 
-/**
- * 启动页、程序入口
- * Created by 康栋普 on 2018/1/31.
- */
+public class LauncherActivity extends BaseActivity {
 
-public class LauncherActivity extends BasePresenterActivity<LoginPresenter> implements LoginContract.ILoginRegisterView {
-    private User user;
-    private Handler mHandler;
-    private DelayRunnable mRunnable;
+
+    private final int SPLASH_DISPLAY_LENGTH = 1500;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-       hideBottomUIMenu();
-        //倒计时
-        startCountdown();
+    protected void onCreate(Bundle bundle) {
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        super.onCreate(bundle);
     }
-
-    private void startCountdown() {
-        mHandler = new Handler();
-        mRunnable = new DelayRunnable(this);
-        mHandler.postDelayed(mRunnable, 2000);
-    }
-
-    /**
-     * 隐藏虚拟按键，并且全屏
-     */
-    protected void hideBottomUIMenu() {
-        //隐藏虚拟按键，并且全屏
-        if (Build.VERSION.SDK_INT > 11 && Build.VERSION.SDK_INT < 19) { // lower api
-            View v = this.getWindow().getDecorView();
-            v.setSystemUiVisibility(View.GONE);
-        } else if (Build.VERSION.SDK_INT >= 19) {
-            //for new api versions.
-            View decorView = getWindow().getDecorView();
-            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN;
-            decorView.setSystemUiVisibility(uiOptions);
-        }
-    }
-
-    //自动登录
-    private void autoLogin() {
-
-        if (UserInfoManager.isLogin()) {
-            user = UserInfoManager.getUserInfo();
-            if (user != null)
-                mPresenter.login();
-        }
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
-        finish();
-
-    }
-
-
-    private static class DelayRunnable implements Runnable {
-        private WeakReference<LauncherActivity> mWeakReference;
-
-        DelayRunnable(LauncherActivity instance) {
-            mWeakReference = new WeakReference<>(instance);
-        }
-
-        @Override
-        public void run() {
-            LauncherActivity instance = mWeakReference.get();
-            if (instance == null) return;
-            instance.autoLogin();
-        }
-    }
-
-
 
     @Override
     protected int getLayoutId() {
@@ -98,39 +42,34 @@ public class LauncherActivity extends BasePresenterActivity<LoginPresenter> impl
     }
 
     @Override
-    protected LoginPresenter createPresenter() {
-        return new LoginPresenter();
-    }
+    protected void initViews() {
+//        startService(new Intent(this, AlarmService.class));
+//        OpeningStartAnimation openingStartAnimation = new OpeningStartAnimation.Builder(this)
+//                .setDrawStategy(new NormalDrawStrategy()) //设置动画效果
+//                .setAppIcon(res.getDrawable(R.drawable.ic_launcher)) //设置图
+////                .setColorOfAppIcon() //设置绘制图标线条的颜色
+////                .setAppName("Do it") //设置app名称
+//                .setColorOfAppName(R.color.icon_color) //设置app名称颜色
+//                .setAppStatement("生命不息，奋斗不止") //设置一句话描述
+//                .setColorOfAppStatement(R.color.icon_color) // 设置一句话描述的颜色
+//                .create();
+//        openingStartAnimation.show(this);
 
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                /* Create an Intent that will start the Menu-Activity. */
+                if (!UserInfoManager.isLogin()){
+                    Intent mainIntent = new Intent(LauncherActivity.this, LoginActivity.class);
+                    startActivity(mainIntent);
+                    finish();
+                } else {
+                    Intent mainIntent = new Intent(LauncherActivity.this, MainActivity.class);
+                    startActivity(mainIntent);
+                    finish();
+                }
 
-
-    @Override
-    public String getJobNumber() {
-        return user.getJobNumber();
-    }
-
-    @Override
-    public String getPassWord() {
-        return user.getPassword();
-    }
-
-
-    @Override
-    public void showResult(String msg) {
-    }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
-
-    @Override
-    protected void onDestroy() {
-        mHandler.removeCallbacks(mRunnable);
-        super.onDestroy();
+            }
+        }, SPLASH_DISPLAY_LENGTH);
     }
 }

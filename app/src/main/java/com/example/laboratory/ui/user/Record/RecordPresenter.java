@@ -7,6 +7,7 @@ import com.example.laboratory.net.callback.RxObserver;
 import com.example.laboratory.ui.core.model.impl.UserModel;
 import com.example.laboratory.ui.core.presenter.BasePresenter;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -47,21 +48,6 @@ public class RecordPresenter extends BasePresenter<RecordContract.IRecordView> i
         addDisposable(mRecordRxPageList);
     }
 
-    RxObserver<String> deleteRx() {
-        RxObserver<String> rxObserver = new RxObserver<String>(this) {
-            @Override
-            protected void onSuccess(String data) {
-                iRecordView.showResult("删除成功");
-            }
-
-            @Override
-            protected void onFail(int errorCode, String errorMsg) {
-                iRecordView.showFail(errorMsg);
-            }
-        };
-        return rxObserver;
-    }
-
 
     @Override
     public void deleteXjRecordByXjId(String id) {
@@ -70,4 +56,6 @@ public class RecordPresenter extends BasePresenter<RecordContract.IRecordView> i
         mUserModel.deleteXjRecordByXjid(id,rxObserver);
         addDisposable(rxObserver);
     }
+
+
 }

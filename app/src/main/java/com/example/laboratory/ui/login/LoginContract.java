@@ -13,7 +13,7 @@ import com.example.laboratory.ui.core.view.IView;
 public interface LoginContract {
 
     interface IUserPresenter {
-        void login();
+        void login(String jobNumber,String password);
         void register();
 
     }
@@ -21,23 +21,5 @@ public interface LoginContract {
 
     interface ILoginRegisterView extends IView {
 
-        /**
-         * 获取工号
-         *
-         * @return
-         */
-        String getJobNumber();
-
-        /**
-         * 获取密码
-         *
-         * @return
-         */
-        String getPassWord();
-
-        /**
-         * 登录或注册Result
-         */
-        void showResult(String msg);
     }
 }

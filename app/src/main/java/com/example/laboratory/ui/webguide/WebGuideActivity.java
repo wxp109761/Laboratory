@@ -3,7 +3,7 @@ package com.example.laboratory.ui.webguide;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+import androidx.cardview.widget.CardView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -12,9 +12,17 @@ import com.example.laboratory.ui.base.BaseActivity;
 
 public class WebGuideActivity extends BaseActivity {
     @BindView(R.id.web_aolan)
-    TextView webAolan;
-    @BindView(R.id.web_beshe)
-    TextView webBeshe;
+    CardView webAolan;
+    @BindView(R.id.web_bishe)
+    CardView webBishe;
+    @BindView(R.id.web_library)
+    CardView webLibrary;
+    @BindView(R.id.web_banshi)
+    CardView webBanshi;
+    @BindView(R.id.web_jiaowu)
+    CardView webJiaowu;
+    @BindView(R.id.web_baidu)
+    CardView webBaidu;
 
     @Override
     protected int getLayoutId() {
@@ -30,24 +38,41 @@ public class WebGuideActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
-
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO: add setContentView(...) invocation
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.web_aolan, R.id.web_beshe})
+    @OnClick({R.id.web_aolan, R.id.web_bishe, R.id.web_library, R.id.web_banshi, R.id.web_jiaowu, R.id.web_baidu})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.web_aolan:
-                startActivity(new Intent(WebGuideActivity.this,WebWiewActivity.class));
+                GotoActivity("http://xsgl.just.edu.cn/LOGIN.ASPX","奥兰管理系统");
                 break;
-            case R.id.web_beshe:
+            case R.id.web_bishe:
+                GotoActivity("http://bysj.just.edu.cn/","毕业设计管理系统");
+                break;
+            case R.id.web_library:
+                GotoActivity("http://lib.just.edu.cn/","图书管理系统");
+                break;
+            case R.id.web_banshi:
+                GotoActivity("http://ids2.just.edu.cn/cas/login?service=http%3A%2F%2Fmy.just.edu.cn%2F","一站式服务大厅");
+                break;
+            case R.id.web_jiaowu:
+                GotoActivity("http://jwgl.just.edu.cn:8080/","教务管理系统");
+                break;
+            case R.id.web_baidu:
+                GotoActivity("https://www.baidu.com/","百度");
+
+
                 break;
         }
+    }
+
+    public void GotoActivity(String url,String title){
+        Intent intent=new Intent(WebGuideActivity.this,WebWiewActivity.class);
+        Bundle bundle=new Bundle();
+        bundle.putString("url",url);
+        bundle.putString("title",title);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 }

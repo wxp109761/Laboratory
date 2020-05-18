@@ -8,10 +8,8 @@ import com.example.laboratory.ui.core.model.IUserModel;
 import com.google.gson.Gson;
 import okhttp3.RequestBody;
 
-/**
- * author: 康栋普
- * date: 2018/3/21
- */
+import java.util.Date;
+
 
 public class UserModel extends CommonModel implements IUserModel {
 
@@ -22,6 +20,7 @@ public class UserModel extends CommonModel implements IUserModel {
                 .compose(RxSchedulers.<Record>io_main())
                 .subscribe(rxObserver);
     }
+
 
 
     @Override
@@ -59,6 +58,17 @@ public class UserModel extends CommonModel implements IUserModel {
         doRxRequest()
                 .getUserExceptSelf("Bearer "+ UserInfoManager.getUserInfo().getToken(),uid)
                 .compose(RxSchedulers.<UserList>io_main())
+                .subscribe(rxObserver);
+    }
+
+    @Override
+    public void updateUserInfo(RxObserver<String> rxObserver, String uid,User user) {
+        Gson gson=new Gson();
+        String strEntity = gson.toJson(user);
+        RequestBody body = RequestBody.create(okhttp3.MediaType.parse("application/json;charset=UTF-8"),strEntity);
+        doRxRequest()
+                .updataUserInfo("Bearer "+ UserInfoManager.getUserInfo().getToken(),uid,body)
+                .compose(RxSchedulers.<String>io_main())
                 .subscribe(rxObserver);
     }
 

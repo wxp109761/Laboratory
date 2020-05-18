@@ -59,6 +59,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         } else {
             mToolbar.setVisibility(View.GONE);
         }
+
         //初始化Content
         initContent(getLayoutId());
         //注册事件线

@@ -12,6 +12,7 @@ import butterknife.OnClick;
 import com.example.laboratory.R;
 import com.example.laboratory.bean.Depart;
 import com.example.laboratory.bean.LaboratoryList;
+import com.example.laboratory.bean.Remind;
 import com.example.laboratory.bean.UserList;
 import com.example.laboratory.common.CommonUtils;
 import com.example.laboratory.common.Const;
@@ -24,7 +25,8 @@ import com.example.laboratory.root_ui.Item.ItemListActivity;
 import com.example.laboratory.root_ui.UserInfoList.UserInfoListActivity;
 import com.example.laboratory.root_ui.message.MessageActivity;
 import com.example.laboratory.root_ui.notice.NoticeActivity;
-import com.example.laboratory.ui.Remind.remind;
+import com.example.laboratory.test.RemindActivity;
+import com.example.laboratory.ui.Remind.NewRemindActivity;
 import com.example.laboratory.ui.SecureCheck.SeCheckActivity;
 import com.example.laboratory.ui.webguide.WebGuideActivity;
 import com.example.laboratory.ui.base.BasePresenterFragment;
@@ -82,7 +84,7 @@ public class HomeFragment extends BasePresenterFragment<HomePresenter> implement
     protected void initViews(View view) {
         this.rootView = view;
         ButterKnife.bind(this,rootView);
-//        mPresenter.getDepartList();
+        mPresenter.getDepartList();
 
         if (UserInfoManager.isLogin()) {
             if (UserInfoManager.getUserInfo().getPermission().equals("2")) {
@@ -93,7 +95,6 @@ public class HomeFragment extends BasePresenterFragment<HomePresenter> implement
                 userManage.setVisibility(View.VISIBLE);
                 labManage.setVisibility(View.VISIBLE);
                 itemManage.setVisibility(View.VISIBLE);
-
             }
         }
         BannerLooper();
@@ -189,7 +190,7 @@ public class HomeFragment extends BasePresenterFragment<HomePresenter> implement
      * 提醒待办
      */
     private void remind(){
-        Intent intent=new Intent(rootView.getContext(), remind.class);
+        Intent intent=new Intent(rootView.getContext(), RemindActivity.class);
         startActivity(intent);
     }
 

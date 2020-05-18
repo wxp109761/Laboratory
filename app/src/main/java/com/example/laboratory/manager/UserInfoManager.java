@@ -17,11 +17,7 @@ import java.io.ObjectOutputStream;
 
 import javax.crypto.spec.SecretKeySpec;
 
-/**
- * 用户信息管理类
- * author: 康栋普
- * date: 2018/3/1
- */
+
 
 public class UserInfoManager {
 
@@ -60,7 +56,6 @@ public class UserInfoManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     private static void saveAesKey(SecretKeySpec keySpec){

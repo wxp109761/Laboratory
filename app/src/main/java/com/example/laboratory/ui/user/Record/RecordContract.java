@@ -4,6 +4,8 @@ import com.example.laboratory.bean.Laboratory;
 import com.example.laboratory.bean.Record;
 import com.example.laboratory.ui.core.view.IPageLoadDataView;
 
+import java.util.Date;
+
 
 /**
  * 用户协约类

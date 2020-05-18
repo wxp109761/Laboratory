@@ -48,7 +48,6 @@ public class LaboratoryListAdapter extends BaseListAdapter<LaboratoryList.LabLis
     }
     public interface OnLabListItemClickListener{
         void onDeleteLabsClick(int position, String labid);
-
     }
 
     @Override

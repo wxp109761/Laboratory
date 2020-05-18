@@ -1,11 +1,12 @@
 package com.example.laboratory.net.interceptor;
 
 import com.example.laboratory.application.AppContext;
-import com.example.laboratory.utils.NetworkUtils;
+
 
 
 import java.io.IOException;
 
+import com.example.laboratory.utils.NetWorkUtils;
 import okhttp3.CacheControl;
 import okhttp3.Interceptor;
 import okhttp3.Request;
@@ -22,7 +23,7 @@ public class RequestInterceptor implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
         //无网络时从缓存中获取
-        if (!NetworkUtils.isAvailable(AppContext.getContext())) {
+        if (!NetWorkUtils.isNetworkConnected(AppContext.getContext())) {
             //无网络时,设置超时为30天
             int maxStale = 30 * 24 * 60 * 60;
             request = request.newBuilder()

@@ -18,9 +18,6 @@ public class HomePresenter extends BasePresenter<HomeContract.IHomeView> impleme
     public HomePresenter() {
         this.homeModel = new HomeModel();
     }
-
-
-
     RxObserver<UserList> getUserRx(){
         iHomeView= getView();
         RxObserver<UserList> usersRxObserver=new RxObserver<UserList>(this) {

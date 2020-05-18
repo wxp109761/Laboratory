@@ -8,17 +8,12 @@ import java.util.Map;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.subjects.PublishSubject;
 
-/**
- * 事件线
- * author: 康栋普
- * date: 2018/4/11
- */
+
 
 public class RxEvent {
 
     private static RxEvent mInstance;
     private Map<String, List<PublishSubject>> mSubjectMaps = new HashMap<>();
-
     public static RxEvent getInstance() {
         if (mInstance == null) {
             synchronized (RxEvent.class) {
@@ -28,7 +23,6 @@ public class RxEvent {
         }
         return mInstance;
     }
-
 
     /**
      * 注册事件

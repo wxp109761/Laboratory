@@ -68,7 +68,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="设置提醒"
+                            android:text="提醒待办"
                             android:drawableTop="@drawable/ic_remind"
                             android:background="?attr/selectableItemBackground"
                             android:textColor="@color/tab_text_color"

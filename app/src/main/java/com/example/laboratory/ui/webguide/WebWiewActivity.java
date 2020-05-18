@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import com.example.laboratory.R;
 import com.example.laboratory.ui.base.BaseActivity;
 import com.just.agentweb.AgentWeb;
@@ -20,8 +21,8 @@ public class WebWiewActivity extends BaseActivity {
     @BindView(R.id.container)
     FrameLayout  mContainer;
     private AgentWeb mAgentWeb;
-    String title = "百度";
-    private String url = "https://www.baidu.com/";
+    String title ="";
+    private String url = "";
 
     @Override
     protected boolean initToolbar() {
@@ -73,6 +74,7 @@ public class WebWiewActivity extends BaseActivity {
         return super.onMenuOpened(featureId, menu);
     }
 
+
     //分享
     private void share() {
         Intent intent = new Intent(Intent.ACTION_SEND);
@@ -95,29 +97,17 @@ public class WebWiewActivity extends BaseActivity {
 
     @Override
     protected void initViews() {
-
-    }
-
-    @Override
-    protected void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
+        ButterKnife.bind(this);
+        Bundle bundle = this.getIntent().getExtras();
+        url = bundle.getString("url");
+        title = bundle.getString("title");
+        mToolbar.setTitle(title);
         mAgentWeb = AgentWeb.with(this)
                 .setAgentWebParent(mContainer, new FrameLayout.LayoutParams(-1, -1))
                 .useDefaultIndicator(R.color.black)
                 .createAgentWeb()
                 .ready()
-                .go("https://www.baidu.com/");
-    }
-
-    @Override
-    protected void getIntent(Intent intent) {
-        Bundle bundle = intent.getExtras();
-        assert bundle != null;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            title = Html.fromHtml(title, Html.FROM_HTML_MODE_LEGACY).toString();
-        } else {
-            title = Html.fromHtml(title).toString();
-        }
+                .go(url);
     }
 
 

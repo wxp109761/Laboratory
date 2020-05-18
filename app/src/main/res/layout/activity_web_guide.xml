@@ -4,16 +4,107 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="120dp"
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="80dp"
+                  android:paddingTop="10dp"
                   android:orientation="horizontal">
-        <TextView style="@style/Custom.user_info"
-                  android:id="@+id/web_aolan"
-                  android:text="奥兰管理系统"/>
+        <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:id="@+id/web_aolan">
+            <TextView
+                      android:textAlignment="center"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:drawableTop="@drawable/ic_aolan"
+                      android:drawablePadding="10dp"
+                      android:text="奥兰管理系统"/>
+        </androidx.cardview.widget.CardView>
 
-        <TextView style="@style/Custom.user_info"
-                  android:id="@+id/web_beshe"
-                  android:text="毕设系统"/>
-
+        <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:id="@+id/web_bishe">
+            <TextView
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableTop="@drawable/ic_graduation"
+                    android:drawablePadding="10dp"
+                    android:text="毕设系统"/>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="80dp"
+                  android:paddingTop="10dp"
+                  android:orientation="horizontal">
+        <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:id="@+id/web_library">
+            <TextView
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableTop="@drawable/ic_library"
+                    android:drawablePadding="10dp"
+                    android:text="图书管理系统"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:id="@+id/web_banshi">
+            <TextView
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/ic_banshi_"
+                    android:text="办事大厅"/>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="80dp"
+                  android:paddingTop="10dp"
+                  android:orientation="horizontal">
+        <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:id="@+id/web_jiaowu">
+            <TextView
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableTop="@drawable/ic_jiaowu"
+                    android:drawablePadding="10dp"
+                    android:text="教务管理系统"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:id="@+id/web_baidu">
+            <TextView
+                    android:textAlignment="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableTop="@drawable/ic_baidu"
+                    android:drawablePadding="10dp"
+                    android:text="百度导航"/>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 </LinearLayout>

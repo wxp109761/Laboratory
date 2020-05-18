@@ -25,11 +25,10 @@
             android:title="@string/xj_records"
             app:showAsAction="ifRoom"
     />
-
     <item
-            android:id="@+id/menu_mine_info"
-            android:icon="@drawable/ic_user_info_light_24dp"
-            android:title="@string/user_info"
+            android:id="@+id/menu_mine_remind"
+            android:icon="@drawable/ic_lab_light_24dp"
+            android:title="待办提醒"
             app:showAsAction="ifRoom"
     />
     <item

@@ -8,6 +8,7 @@ import io.reactivex.Observable;
 import okhttp3.RequestBody;
 import retrofit2.http.*;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -26,12 +27,9 @@ public interface ApiServer {
     @POST(UrlConstainer.LOGIN)
     Observable<BaseBean<User>> login(@Body RequestBody body);
 
-
     @Headers("Content-Type:application/json")
     @GET(UrlConstainer.GETRECORDLIST)
     Observable<BaseBean<Record>> getRecordList(@Header("Authorization") String token,@Path("uid") String uid);
-
-
     /**
      * 条件查询实验室列表
      * @param token
@@ -82,12 +80,9 @@ public interface ApiServer {
     @GET(UrlConstainer.GETDEPARTILIST)
     Observable<BaseBean<Depart>> getDepartInfo(@Header("Authorization") String token);
 
-
-
     @Headers("Content-Type:application/json")
     @GET(UrlConstainer.GETRESULTBYXJID)
     Observable<BaseBean<Result>> getResultByXjId(@Header("Authorization") String token,@Path("xjid") String xjid);
-
 
     /**
      * 获取items
@@ -143,6 +138,14 @@ public interface ApiServer {
     @Headers("Content-Type:application/json")
     @GET(UrlConstainer.GETUSEREXCEPTSELF)
     Observable<BaseBean<UserList>> getUserExceptSelf(@Header("Authorization") String token,@Path("uid") String uid);
+
+
+    /*
+    更新用户信息
+     */
+    @Headers("Content-Type:application/json")
+    @PUT(UrlConstainer.UPDATEUSERINFO)
+    Observable<BaseBean<String>> updataUserInfo(@Header("Authorization") String token,@Path("uid") String uid,@Body RequestBody body);
 
 
     @Headers("Content-Type:application/json")
@@ -234,5 +237,24 @@ public interface ApiServer {
     Observable<BaseBean<String>> setMessageRead(@Header("Authorization") String token,@Path("id") String id,@Path("userId") String userId);
 
 
+    //待办提醒
+
+    @Headers("Content-Type:application/json")
+    @POST(UrlConstainer.ADDREMIND)
+    Observable<BaseBean<String>> addRemind(@Header("Authorization") String token,@Body RequestBody body);
+
+    @Headers("Content-Type:application/json")
+    @DELETE(UrlConstainer.DELETEREMINDBYID)
+    Observable<BaseBean<String>> deleteRemindById(@Header("Authorization") String token,@Path("id") Integer id);
+
+
+    @Headers("Content-Type:application/json")
+    @PUT(UrlConstainer.UPDATEREMIND)
+    Observable<BaseBean<String>> updateRemind(@Header("Authorization") String token,@Path("id") Integer id,@Body RequestBody body);
+
+
+    @Headers("Content-Type:application/json")
+    @GET(UrlConstainer.GETREMINDBYBYUID)
+    Observable<BaseBean<Remind>> getRemindByUid(@Header("Authorization") String token,@Path("uid") String uid);
 
 }
