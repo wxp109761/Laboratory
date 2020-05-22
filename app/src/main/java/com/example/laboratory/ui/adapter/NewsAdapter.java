@@ -1,6 +1,7 @@
 package com.example.laboratory.ui.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -55,6 +56,7 @@ public class NewsAdapter extends BaseListAdapter<NewsBean.ResultBean.ListBean> {
                     .into(imageView);
 
         }
+        Log.d("RRRXX",list.get(position).getTitle());
         txtTitle.setText(list.get(position).getTitle());
         txtSummary.setText(list.get(position).getIntro());
         txtMedia.setText(list.get(position).getMedia());

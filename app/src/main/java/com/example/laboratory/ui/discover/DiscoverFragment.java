@@ -4,6 +4,7 @@ package com.example.laboratory.ui.discover;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,6 +30,8 @@ public class DiscoverFragment extends BaseFragment {
     int page = 0;
     @BindView(R.id.news_list)
     RecyclerView newsList;
+    @BindView(R.id.ll)
+    LinearLayout ll;
     private String DEFAULT_MAIN_URL = "http://api.search.sina.com.cn/?q=[高校实验室]&c=news&sort=time&ie=utf-8&from=dfz_api&page=" + page;
     View rootView;
 
@@ -37,7 +40,7 @@ public class DiscoverFragment extends BaseFragment {
     @Override
     protected void initViews(View view) {
         rootView = view;
-
+        newsList.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
         MyAsyncTask myAsyncTask = new MyAsyncTask();
         myAsyncTask.execute();
     }
@@ -81,8 +84,7 @@ public class DiscoverFragment extends BaseFragment {
             listBean = fromJson.getResult().getList();
 
             NewsAdapter newsAdapter = new NewsAdapter(rootView.getContext(), listBean);
-            newsList.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
-            newsList.setAdapter(newsAdapter);
+           newsList.setAdapter(newsAdapter);
             Log.d(TAG, listBean.get(0).getTitle());
             //listView.addI
 
