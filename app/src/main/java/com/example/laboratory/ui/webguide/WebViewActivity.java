@@ -17,7 +17,7 @@ import com.just.agentweb.AgentWeb;
 
 import java.lang.reflect.Method;
 
-public class WebWiewActivity extends BaseActivity {
+public class WebViewActivity extends BaseActivity {
     @BindView(R.id.container)
     FrameLayout  mContainer;
     private AgentWeb mAgentWeb;

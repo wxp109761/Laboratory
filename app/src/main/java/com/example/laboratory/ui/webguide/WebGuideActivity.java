@@ -68,7 +68,7 @@ public class WebGuideActivity extends BaseActivity {
     }
 
     public void GotoActivity(String url,String title){
-        Intent intent=new Intent(WebGuideActivity.this,WebWiewActivity.class);
+        Intent intent=new Intent(WebGuideActivity.this, WebViewActivity.class);
         Bundle bundle=new Bundle();
         bundle.putString("url",url);
         bundle.putString("title",title);

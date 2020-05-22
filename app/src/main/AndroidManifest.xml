@@ -91,7 +91,7 @@
         <activity android:name=".root_ui.message.MessageActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
                   android:screenOrientation="portrait"/>
-        <activity android:name=".ui.webguide.WebWiewActivity"/>
+        <activity android:name=".ui.webguide.WebViewActivity"/>
         <activity android:name=".ui.main.SearchActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
                   android:screenOrientation="portrait"/>
