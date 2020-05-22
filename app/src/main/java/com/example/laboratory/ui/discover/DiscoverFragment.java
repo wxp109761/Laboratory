@@ -1,22 +1,17 @@
 package com.example.laboratory.ui.discover;
 
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.laboratory.R;
 import com.example.laboratory.bean.NewsBean;
-import com.example.laboratory.ui.adapter.BaseListAdapter;
 import com.example.laboratory.ui.adapter.NewsAdapter;
-import com.example.laboratory.ui.base.BaseAbListFragment;
 import com.example.laboratory.ui.base.BaseFragment;
-import com.example.laboratory.ui.core.presenter.BasePresenter;
-import com.example.laboratory.ui.core.view.IView;
-import com.example.laboratory.ui.webguide.WebViewActivity;
 import com.example.laboratory.utils.StreamUtils;
 import com.google.gson.Gson;
 
@@ -27,48 +22,29 @@ import java.net.URL;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
-public class DiscoverFragment extends BaseAbListFragment implements IView {
+public class DiscoverFragment extends BaseFragment {
 
     String TAG = "CreaingNewsActivity";
-    NewsAdapter adapter;
     int page = 0;
-    @BindView(R.id.list_view)
-    ListView listView;
+    @BindView(R.id.news_list)
+    RecyclerView newsList;
     private String DEFAULT_MAIN_URL = "http://api.search.sina.com.cn/?q=[高校实验室]&c=news&sort=time&ie=utf-8&from=dfz_api&page=" + page;
     View rootView;
 
     List<NewsBean.ResultBean.ListBean> listBean;
 
-
     @Override
-    protected BasePresenter createPresenter() {
-        return null;
-    }
+    protected void initViews(View view) {
+        rootView = view;
 
-    @Override
-    protected void loadDatas() {
-        MyAsyncTask myAsyncTask=new MyAsyncTask();
+        MyAsyncTask myAsyncTask = new MyAsyncTask();
         myAsyncTask.execute();
     }
 
     @Override
-    protected BaseListAdapter getListAdapter() {
-        adapter= new NewsAdapter(getContext(), mListData);
-        return adapter;
-    }
-
-    @Override
-    public void setData(List data) {
-
-    }
-
-
-    @Override
-    public void showResult(String msg) {
-
-        mRecyclerView.notifyDataSetChanged();
+    protected int getLayoutId() {
+        return R.layout.fragment_discover;
     }
 
 
@@ -102,13 +78,16 @@ public class DiscoverFragment extends BaseAbListFragment implements IView {
             Gson gson = new Gson();
             NewsBean fromJson = gson.fromJson(result,
                     NewsBean.class);
+            listBean = fromJson.getResult().getList();
 
+            NewsAdapter newsAdapter = new NewsAdapter(rootView.getContext(), listBean);
+            newsList.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
+            newsList.setAdapter(newsAdapter);
+            Log.d(TAG, listBean.get(0).getTitle());
+            //listView.addI
 
-            mListData.clear();
-            mListData.addAll(fromJson.getResult().getList());
-            Log.d(TAG,mListData.get(0)+"");
-//
-//
+////
+////
 //
 //            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //                @Override
@@ -124,9 +103,7 @@ public class DiscoverFragment extends BaseAbListFragment implements IView {
 //                    }
 //                }
 //            });
-//        }
+//
         }
     }
-
-
 }
