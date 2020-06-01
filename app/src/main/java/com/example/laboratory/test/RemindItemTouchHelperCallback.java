@@ -10,13 +10,13 @@ import androidx.recyclerview.widget.RecyclerView;
 /**
  *
  */
-public class TodoItemTouchHelperCallback extends ItemTouchHelper.Callback {
+public class RemindItemTouchHelperCallback extends ItemTouchHelper.Callback {
 
     public static final float ALPHA_FULL = 1.0f;
 
     private final ItemTouchHelperAdapter mAdapter;
 
-    public TodoItemTouchHelperCallback(ItemTouchHelperAdapter adapter) {
+    public RemindItemTouchHelperCallback(ItemTouchHelperAdapter adapter) {
         mAdapter = adapter;
     }
 

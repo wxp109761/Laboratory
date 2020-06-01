@@ -265,11 +265,7 @@ public class UserDataActivity extends BasePresenterActivity<UserInfoListPresente
                 dialog.dismiss();
             }
         });
-
-
     }
-
-
 
     /**
      * 自动获取相机权限
@@ -466,61 +462,11 @@ public class UserDataActivity extends BasePresenterActivity<UserInfoListPresente
             }
         });
         editDialog.show();// 显示对话框
-
     }
 
     @Override
     public void showResult(String msg) {
-
     }
-
-
-//    /**
-//     * Glide图片加载
-//     */
-//    private void glideLoad() {
-//
-//        RequestOptions options_1 = new RequestOptions()
-//                .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                .signature(new ObjectKey(SPUtils.get(UserDataActivity.this, "head_signature", "")))
-//                .placeholder(R.drawable.default_photo);
-//
-//        RequestOptions options_2 = new RequestOptions()
-//                .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                .signature(new ObjectKey(SPUtils.get(UserDataActivity.this, "head_signature", "")))
-//                .placeholder(R.drawable.ic_img1);
-//
-//        Glide.with(getApplicationContext())
-//                .load(SPUtils.get(UserDataActivity.this, "path", ""))
-//                .apply(options_1)
-//                .into(toolbar_userhead);
-//
-//        Glide.with(getApplicationContext())
-//                .load(SPUtils.get(UserDataActivity.this, "path", ""))
-//                .apply(options_1)
-//                .into(userHead);
-//
-//        Glide.with(getApplicationContext())
-//                .load(SPUtils.get(UserDataActivity.this, "path", ""))
-//                .apply(bitmapTransform(new BlurTransformation(25, 3)))
-//                .apply(options_2)
-//                .into(top_bg);
-//    }
-
-//    /**
-//     * 用户引导
-//     */
-//    private void initGuide() {
-//        NewbieGuide.with(this)
-//                .setLabel("guide2")
-//                .setShowCounts(1)//控制次数
-//                .alwaysShow(false)//总是显示，调试时可以打开
-//                .addGuidePage(GuidePage.newInstance()
-//                        .addHighLight(userHead)
-//                        .setLayoutRes(R.layout.guide_user_info))
-//                .show();
-//
-//    }
 
 
 }

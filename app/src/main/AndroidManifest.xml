@@ -2,12 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools"
           package="com.example.laboratory">
+
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature android:name="android.hardware.camera"/>
     <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -15,6 +19,12 @@
     <!-- 任务栈权限 -->
     <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
                      tools:ignore="ProtectedPermissions" />
+
+
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <application
             android:name=".application.LApp"
             android:allowBackup="true"
@@ -27,7 +37,7 @@
         <activity
             android:name=".ui.LauncherActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:theme="@style/AppTheme.Start">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -40,79 +50,68 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"/>
         <activity android:name=".ui.login.LoginActivity"></activity>
         <activity
                 android:name=".ui.user.Laboratory.LabListActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
-                android:screenOrientation="portrait"/>
+                android:screenOrientation="fullSensor"/>
         <activity android:name=".ui.laboratory.LaboratoryActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".ui.user.UserInfoActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".ui.user.Record.RecordListActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".ui.result.ResultActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".ui.SecureCheck.SeCheckActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".root_ui.AddLaboratory.AddLabActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".root_ui.AddUser.AddUserActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".root_ui.UserInfoList.UserInfoListActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".root_ui.Item.ItemListActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".root_ui.Item.AddItemActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".root_ui.notice.NoticeActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".ui.webguide.WebGuideActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".root_ui.notice.AddNotice"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".root_ui.message.SendMessage"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".root_ui.message.MessageActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".ui.webguide.WebViewActivity"/>
         <activity android:name=".ui.main.SearchActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".ui.Remind.NewRemindActivity" android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="fullSensor"/>
         <activity android:name=".test.RemindActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:screenOrientation="portrait"/>
-        <service android:name=".test.AlarmService"
-                 android:process=":live">
-            <intent-filter>
-                <action
-                        android:name="com.example.laboratory.test.AlarmService"
-                />
-            </intent-filter>
-        </service>
-        <receiver
-                android:name=".test.AlarmReceiver"
-                android:enabled="true"
-                android:exported="true"
-                android:process=":remote" />
+                  android:screenOrientation="fullSensor"/>
+        <activity android:name=".ui.Malfunrepair.MalfunRepairActicity"/>
+
         <provider
                 android:name="androidx.core.content.FileProvider"
                 android:authorities="com.example.laboratoryProvider"
@@ -124,5 +123,12 @@
         </provider>
         <activity android:name=".ui.user.UserDataActivity"
                   android:theme="@style/AppTheme.NoActionBar"/>
+
+
+        <service
+            android:name=".test.ClockService"
+            android:enabled="true"
+            android:exported="true" />
+        <activity android:name=".test.ClockRemindDialog"/>
     </application>
 </manifest>

@@ -26,6 +26,7 @@ import com.example.laboratory.root_ui.UserInfoList.UserInfoListActivity;
 import com.example.laboratory.root_ui.message.MessageActivity;
 import com.example.laboratory.root_ui.notice.NoticeActivity;
 import com.example.laboratory.test.RemindActivity;
+import com.example.laboratory.ui.Malfunrepair.MalfunRepairActicity;
 import com.example.laboratory.ui.Remind.NewRemindActivity;
 import com.example.laboratory.ui.SecureCheck.SeCheckActivity;
 import com.example.laboratory.ui.webguide.WebGuideActivity;
@@ -105,8 +106,6 @@ public class HomeFragment extends BasePresenterFragment<HomePresenter> implement
         }
     }
 
-
-
     @Override
     public void onResume() {
         super.onResume();
@@ -152,13 +151,13 @@ public class HomeFragment extends BasePresenterFragment<HomePresenter> implement
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.malfunction_repair:
+                MalfunctionRepair();
                 break;
             case R.id.secure_check:
-
                SecureCheck();
                 break;
             case R.id.remind:
-                remind();
+                Remind();
                 break;
             case R.id.notice_and_back:
                 NoticeBackListener();
@@ -185,24 +184,6 @@ public class HomeFragment extends BasePresenterFragment<HomePresenter> implement
         this.departListeans=departListeans;
 
     }
-
-    /**
-     * 提醒待办
-     */
-    private void remind(){
-        Intent intent=new Intent(rootView.getContext(), RemindActivity.class);
-        startActivity(intent);
-    }
-
-
-    /***
-     * 网址导航
-     */
-    private void WebGuideListener(){
-        Intent intent=new Intent(rootView.getContext(), WebGuideActivity.class);
-        startActivity(intent);
-    }
-
     /**
      * 安全巡检
      */
@@ -216,6 +197,31 @@ public class HomeFragment extends BasePresenterFragment<HomePresenter> implement
         }
 
     }
+    /**
+     * 提醒待办
+     */
+    private void Remind(){
+        Intent intent=new Intent(rootView.getContext(), RemindActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * 隐患上报及处理
+     */
+    private void MalfunctionRepair(){
+        Intent intent=new Intent(rootView.getContext(), MalfunRepairActicity.class);
+        startActivity(intent);
+    }
+
+    /***
+     * 网址导航
+     */
+    private void WebGuideListener(){
+        Intent intent=new Intent(rootView.getContext(), WebGuideActivity.class);
+        startActivity(intent);
+    }
+
+
     XJLabsDialog xjLabsDialog;
     @Override
     public void getLabList(List<LaboratoryList.LabListBean> labListBeans) {

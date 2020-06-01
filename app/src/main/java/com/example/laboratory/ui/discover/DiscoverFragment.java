@@ -14,6 +14,7 @@ import com.example.laboratory.bean.NewsBean;
 import com.example.laboratory.ui.adapter.NewsAdapter;
 import com.example.laboratory.ui.base.BaseFragment;
 import com.example.laboratory.utils.StreamUtils;
+import com.example.laboratory.widget.LMRecyclerView;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -29,9 +30,8 @@ public class DiscoverFragment extends BaseFragment {
     String TAG = "CreaingNewsActivity";
     int page = 0;
     @BindView(R.id.news_list)
-    RecyclerView newsList;
-    @BindView(R.id.ll)
-    LinearLayout ll;
+    LMRecyclerView newsList;
+
     private String DEFAULT_MAIN_URL = "http://api.search.sina.com.cn/?q=[高校实验室]&c=news&sort=time&ie=utf-8&from=dfz_api&page=" + page;
     View rootView;
 
@@ -40,7 +40,8 @@ public class DiscoverFragment extends BaseFragment {
     @Override
     protected void initViews(View view) {
         rootView = view;
-        newsList.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
+        LinearLayoutManager linearLayoutManager=new LinearLayoutManager(view.getContext());
+       // newsList.setLayoutManager(linearLayoutManager);
         MyAsyncTask myAsyncTask = new MyAsyncTask();
         myAsyncTask.execute();
     }
@@ -84,7 +85,7 @@ public class DiscoverFragment extends BaseFragment {
             listBean = fromJson.getResult().getList();
 
             NewsAdapter newsAdapter = new NewsAdapter(rootView.getContext(), listBean);
-           newsList.setAdapter(newsAdapter);
+            newsList.setAdapter(newsAdapter);
             Log.d(TAG, listBean.get(0).getTitle());
             //listView.addI
 

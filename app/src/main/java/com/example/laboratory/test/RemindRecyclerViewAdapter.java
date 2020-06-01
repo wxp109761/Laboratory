@@ -21,7 +21,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class TodoRecyclerViewAdapter extends BaseListAdapter<Remind.RemindListBean> implements ItemTouchHelperAdapter{
+public class RemindRecyclerViewAdapter extends BaseListAdapter<Remind.RemindListBean> implements ItemTouchHelperAdapter{
 
     @BindView(R.id.time_marker)
     TimelineView timeMarker;
@@ -50,7 +50,7 @@ public class TodoRecyclerViewAdapter extends BaseListAdapter<Remind.RemindListBe
         void onDeleteRemindListener(Integer id);
     }
 
-    public TodoRecyclerViewAdapter(OnDeleteRemindListener listener,Context context ,List<Remind.RemindListBean> remindList) {
+    public RemindRecyclerViewAdapter(OnDeleteRemindListener listener, Context context , List<Remind.RemindListBean> remindList) {
         this.listener = listener;
         this.todosList=remindList;
         this.context=context;

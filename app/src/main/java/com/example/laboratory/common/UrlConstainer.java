@@ -4,7 +4,7 @@ package com.example.laboratory.common;
  * Api接口地址
  */
 public class UrlConstainer {
-    public static final String baseUrl = "http://192.168.1.103:9001/";
+    public static final String baseUrl = "http://101.37.28.44:9001/";
     /**
      * 登录
      */
